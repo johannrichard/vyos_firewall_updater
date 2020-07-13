@@ -16,7 +16,7 @@ IgnoreLexer.java~
 /verification
 
 # config
-*.yaml
-!*.sample.yaml
+*.json
+!*.sample.json
 
 venv/*

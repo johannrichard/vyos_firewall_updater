@@ -14,6 +14,7 @@ if len(config) == 0:
     exit(-1)
 
 for groupName in config:
+    print "set firewall group address-group %s" % groupName
     print "delete firewall group address-group %s address" % groupName
     ip_addresses = []
     for host in config[groupName]:

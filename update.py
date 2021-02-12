@@ -19,9 +19,10 @@ for groupName in config:
     ip_addresses = []
     for host in config[groupName]:
         try:
-            ip = socket.gethostbyname(host)
-            if not ip_addresses.__contains__(ip):
-                ip_addresses.append(ip)
+            ips = socket.gethostbyname_ex(host)[2]
+            for ip in ips:
+                if not ip_addresses.__contains__(ip):
+                    ip_addresses.append(ip)
         except:
             pass
     for ip in ip_addresses:
